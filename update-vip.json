@@ -1,5 +1,10 @@
 {
   "version": "8.0.0",
-  "update": [],
+  "update": [
+    {
+      "path": "system/console.js",
+      "code": "\"const { green, greenBright, cyanBright, redBright } = require('chalk');\\nconst fs = require('fs');\\nconst moment = require('moment-timezone');\\nmoment.tz.setDefault('Asia/Jakarta').locale('id');\\nconst func = require('./functions.js');\\nmodule.exports = async (anya, m, setting, msg) => {\\nlet who = m.fromMe ? 'Bot' : m.pushname || 'No Name'\\nlet time = m.messageTimestamp\\nif (!m.budy) return;\\nif (!setting.online) await anya.sendPresenceUpdate('unavailable', m.chat)\\nif (setting.online) {\\nawait anya.sendPresenceUpdate('available', m.chat)\\nawait anya.readMessages([m.key])\\n}\\nif (m.isGc) {\\ntry {\\nlet subject = m.groupName;\\nvar groupName = cyanBright.bold(subject);\\nif (global.db.groups[m.chat].name !== subject) global.db.groups[m.chat].name = subject;\\n} catch {\\nvar groupName = redBright.bold('Timed Out')\\n}\\nif (m.isPrefix) return console.log('\\\\n' + greenBright.bold('[ CMD ]'), moment(time * 1000).format('DD/MM/YY HH:mm:ss'), green.bold('from'), func.color('[' + m.sender.split('@')[0] + '] ', 'orange') + cyanBright.bold(who), green.bold('in'), func.color('[' + m.chat + '] ', 'orange') + groupName, `\\\\n${m.budy}`)\\nif (msg) console.log('\\\\n' + greenBright.bold('[ MSG ]'), moment(time * 1000).format('DD/MM/YY HH:mm:ss'), green.bold('from'), func.color('[' + m.sender.split('@')[0] + '] ', 'orange') + cyanBright.bold(who), green.bold('in'), func.color('[' + m.chat + '] ', 'orange') + groupName, `\\\\n${m.budy}`)\\n} else {\\nif (m.isPrefix) return console.log('\\\\n' + greenBright.bold('[ CMD ]'), moment(time * 1000).format('DD/MM/YY HH:mm:ss'), green.bold('from'), func.color('[' + m.sender.split('@')[0] + '] ', 'orange') + cyanBright.bold(who), green.bold('in'), func.color('[' + m.chat + ']', 'orange'), `\\\\n${m.budy}`)\\nif (msg) console.log('\\\\n' + greenBright.bold('[ MSG ]'), moment(time * 1000).format('DD/MM/YY HH:mm:ss'), green.bold('from'), '[' + m.sender.split('@')[0] + '] ' + cyanBright.bold(who), green.bold('in'), func.color('[' + m.chat + ']', 'orange'), `\\\\n${m.budy}`)\\n}\\n}\\nfunc.reloadFile(__filename)\""
+    }
+  ],
   "remove": []
 }
