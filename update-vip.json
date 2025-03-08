@@ -1,11 +1,6 @@
 {
   "version": "7.0.1",
-  "update": [
-    {
-      "path": "plugins/group/cekmember.js",
-      "code": "\"exports.run = {\\n    usage: ['cekmember', 'cekasalmember'],\\n    category: 'group',\\n    async: async (m, { func, mecha, users }) => {\\n        // Ambil metadata grup\\n        if (!m.isGc) return m.reply(global.mess.group)\\n        const groupMetadata = await mecha.groupMetadata(m.chat);\\n        const members = groupMetadata.participants;\\n\\n        // Daftar negara, kode telepon, dan bendera\\n        const countryInfo = {\\n            '🇮🇩 Indonesia': '+62',\\n            '🇷🇺 Rusia/Kazakhstan': '+7',\\n            '🇲🇾 Malaysia': '+60',\\n            '🇺🇸 Amerika Serikat': '+1',\\n            '🇬🇧 Inggris': '+44',\\n            '🇩🇪 Jerman': '+49',\\n            '🇫🇷 Prancis': '+33',\\n            '🇯🇵 Jepang': '+81',\\n            '🇮🇳 India': '+91',\\n            '🇦🇷 Argentina': '+54',\\n            '🇹🇷 Turkey': '+90',\\n            '🇲🇽 Meksiko': '+52',\\n            '🇧🇷 Brazil': '+55',\\n            // Tambahkan negara lain sesuai kebutuhan\\n        };\\n\\n        // Buat objek untuk menyimpan jumlah anggota berdasarkan negara\\n        const countryCount = {};\\n        for (const country in countryInfo) {\\n            countryCount[country] = 0;\\n        }\\n\\n        // Hitung anggota berdasarkan negara\\n        members.forEach(member => {\\n            const phoneNumber = member.id.split('@')[0]; // Ambil nomor telepon dari ID\\n\\n            for (const [country, code] of Object.entries(countryInfo)) {\\n                if (phoneNumber.startsWith(code.replace('+', ''))) { // Cek dengan menghapus tanda +\\n                    countryCount[country]++;\\n                    break;\\n                }\\n            }\\n        });\\n\\n        // Hitung total anggota\\n        const totalMembers = members.length;\\n\\n        // Buat pesan untuk dikirim\\n        let message = '乂  *A S A L - N E G A R A*\\\\n\\\\nJumlah Anggota Grup Berdasarkan Negara:\\\\n';\\n        for (const country in countryCount) {\\n            message += `${country} (${countryInfo[country]}) : ${countryCount[country]}\\\\n`; // Tampilkan bendera, kode negara, dan jumlah\\n        }\\n        message += `\\\\n📋 Total Anggota: ${totalMembers}`;\\n\\n        // Kirim pesan\\n        await m.reply(message);\\n    }\\n};\""
-    }
-  ],
+  "update": [],
   "remove": [
     "plugins/special/infobot"
   ]
