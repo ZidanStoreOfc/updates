@@ -1,5 +1,10 @@
 {
   "version": "7.0.1",
-  "update": [],
+  "update": [
+    {
+      "path": "plugins/tools/inspectch.js",
+      "code": "\"let moment=require(\\\"moment-timezone\\\");exports.run={usage:[\\\"inspectch\\\"],use:\\\"link saluran\\\",category:\\\"tools\\\",async:async(t,{func:e,anya:a})=>{if(!t.text)return t.reply(e.example(t.cmd,\\\"https://whatsapp.com/channel/0029VaU3j0z2ER6liR0MY601\\\"));if(!t.text.includes(\\\"whatsapp.com/channel\\\"))return t.reply(\\\"Link Invalid.\\\");var[,i]=t.text.match(/whatsapp\\\\.com\\\\/channel\\\\/([0-9A-Za-z]{20,24})/i)||{};try{var n=await a.newsletterMetadata(\\\"invite\\\",i);if(!n)return t.reply(e.jsonFormat(n));var{id:r,state:o,creation_time:s,name:c,nameTime:m,description:p,descriptionTime:l,reaction_codes:u,subscribers:M,verification:h}=n,Y=(Y=(Y=(Y=(Y=(Y=(Y=`乂  *CHANNEL LINK INSPECTOR*\\n`)+(`\\n◦  *ID :* `+r)+(`\\n◦  *Name :* `+c))+(`\\n◦  *Name Update At :* `+moment(m/1e3).tz(\\\"Asia/Jakarta\\\").format(\\\"DD-MM-YYYY, HH:MM:SS\\\")))+(`\\n◦  *Create At :* `+moment(1e3*s).tz(\\\"Asia/Jakarta\\\").format(\\\"DD-MM-YYYY, HH:MM:SS\\\")))+(`\\n◦  *Subscribers :* `+M)+(`\\n◦  *State :* `+o))+(`\\n◦  *Reaction Codes :* `+u)+(`\\n◦  *Verification :* `+h))+(`\\n◦  *Desc Update At :* `+moment(l/1e3).tz(\\\"Asia/Jakarta\\\").format(\\\"DD-MM-YYYY, HH:MM:SS\\\"))+(`\\n◦  *Description :*\\n`+(p||\\\"No Description\\\"));a.reply(t.chat,Y.trim(),t,{expiration:t.expiration})}catch(e){console.log(e),a.reply(t.chat,e.message,t,{expiration:t.expiration})}},premium:!0,location:\\\"plugins/tools/inspectch.js\\\"};\""
+    }
+  ],
   "remove": []
 }
