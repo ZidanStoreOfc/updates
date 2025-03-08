@@ -1,7 +1,5 @@
 {
   "version": "7.0.1",
   "update": [],
-  "remove": [
-    "plugins/special/infobot"
-  ]
+  "remove": []
 }
