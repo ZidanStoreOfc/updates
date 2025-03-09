@@ -8,10 +8,6 @@
     {
       "path": "plugins/special/runtime.js",
       "code": "\"exports.run={usage:[\\\"runtime\\\"],hidden:[\\\"test\\\",\\\"tes\\\"],category:\\\"special\\\",async:async(e,{func:n,anya:a,setting:t,fkon:s})=>{var i=e.isVvip?\\\"Done Tuan! \\\"+e.pushname:\\\"Done! \\\"+e.pushname;a.sendMessageModify(e.chat,\\\"Quick Test \\\"+i,s,{title:\\\"Aktif Selama :\\\",body:n.runtime(process.uptime()),thumbUrl:t.cover,largeThumb:!1,url:null,expiration:e.expiration})}};\""
-    },
-    {
-      "path": "plugins/runtime/runtime.js",
-      "code": "\"exports.run={usage:[\\\"runtime\\\"],hidden:[\\\"test\\\",\\\"tes\\\"],category:\\\"special\\\",async:async(e,{func:n,anya:a,setting:t,fkon:s})=>{var i=e.isVvip?\\\"Done Tuan! \\\"+e.pushname:\\\"Done! \\\"+e.pushname;a.sendMessageModify(e.chat,\\\"Quick Test \\\"+i,s,{title:\\\"Aktif Selama :\\\",body:n.runtime(process.uptime()),thumbUrl:t.cover,largeThumb:!1,url:null,expiration:e.expiration})}};\""
     }
   ],
   "remove": []
