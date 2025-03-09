@@ -55,6 +55,7 @@
     }
   ],
   "remove": [
-    "plugins/ai/ai.js"
+    "plugins/ai/ai.js",
+    "plugins/convert/balogo.js"
   ]
 }
