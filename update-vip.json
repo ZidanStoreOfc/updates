@@ -55,7 +55,6 @@
     }
   ],
   "remove": [
-    "plugins/user/ewepaksa.js",
     "plugins/ai/ai.js"
   ]
 }
