@@ -64,6 +64,10 @@
     {
       "path": "plugins/event/_botadmin.js",
       "code": "\"let messageSent=!1;exports.run={main:async(a,{func:i,anya:e})=>{var t=a.chat,s=await e.groupMetadata(t),n=s.participants.some(a=>a.id===e.user.jid&&a.isAdmin);n||messageSent?n&&console.log(\\\"Bot is already an admin.\\\"):(n=`@${global.owner.split(\\\"@\\\")[0]} dan @${e.user.jid.split(\\\"@\\\")[0]} tidak di admin kan di grup ini. paket sewa bot mu akan sia-sia!`,s=s.participants.map(a=>a.id),await e.sendMessage(t,{text:n,mentions:s,quoted:i.fstatus(\\\"System Notification\\\"),ephemeralExpiration:86400}),messageSent=!0,i&&i.fverified&&await i.fverified(a))}};\""
+    },
+    {
+      "path": "plugins/developer/struktur.js",
+      "code": "\"let fs=require(\\\"fs\\\"),path=require(\\\"path\\\");function printDirectoryStructure(n,a=\\\"\\\"){let s=\\\"\\\",c=fs.readdirSync(n);return c.forEach((r,t)=>{var e=path.join(n,r),t=t===c.length-1,i=fs.statSync(e).isDirectory()?\\\"📂\\\":\\\"📄\\\";s+=a+(t?\\\"└── \\\":\\\"├── \\\")+i+` ${r}\\n`,fs.statSync(e).isDirectory()&&(s+=printDirectoryStructure(e,a+(t?\\\" \\\":\\\"│ \\\")))}),s}exports.run={usage:[\\\"struktur\\\"],hidden:[\\\"stroke\\\"],category:\\\"developer\\\",async:async(r,{anya:t})=>{var e=printDirectoryStructure(\\\"./plugins\\\");t.reply(r.chat,e,r,{expiration:r.expiration})},location:\\\"plugins/developer/struktur.js\\\"};\""
     }
   ],
   "remove": [
