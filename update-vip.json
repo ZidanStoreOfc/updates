@@ -11,7 +11,7 @@
     },
     {
       "path": "plugins/event/_antialay.js",
-      "code": "\"exports.run={main:async(e,{func:a,mecha:i})=>{e.fromMe||!e.budy.match(/(😍|🥰|😘|😊|🤭|🤗)/gi)||![\\\"120363264558127828@g.us\\\"].includes(e.chat)||e.isPrem||e.isVvip||(await i.sendMessage(e.chat,{delete:{remoteJid:e.chat,fromMe:!1,id:e.key.id,participant:e.sender}}),await a.delay(1e3))},group:!0,botAdmin:!0,location:\\\"plugins/event/_antialay.js\\\"};\""
+      "code": "\"exports.run={main:async(e,{func:a,anya:i})=>{e.fromMe||!e.budy.match(/(😍|🥰|😘|😊|🤭|🤗)/gi)||![\\\"120363264558127828@g.us\\\"].includes(e.chat)||e.isPrem||e.isVvip||(await i.sendMessage(e.chat,{delete:{remoteJid:e.chat,fromMe:!1,id:e.key.id,participant:e.sender}}),await a.delay(1e3))},group:!0,botAdmin:!0,location:\\\"plugins/event/_antialay.js\\\"};\""
     },
     {
       "path": "plugins/event/_antierror.js",
