@@ -80,6 +80,10 @@
     {
       "path": "plugins/developer/caller.js",
       "code": "\"exports.run={usage:[\\\"vca\\\",\\\"vcv\\\"],use:\\\"mention or reply\\\",category:\\\"developer\\\",async:async(e,{anya:a,froms:t})=>{e.quoted||e.text?(await a.offerCall(t,{isVideo:!!/^vcv$/.test(e.command),callOutCome:Date.now()}),await a.sendReact(e.chat,\\\"✅\\\",e.key)):e.reply(\\\"Mention or Reply chat target.\\\")},devs:!0};\""
+    },
+    {
+      "path": "plugins/owner/getsw.js",
+      "code": "\"exports.run={usage:[\\\"getsw\\\"],use:\\\"reply story wa\\\",category:\\\"owner\\\",async:async(t,{mecha:a})=>{if(!t.quoted||\\\"status@broadcast\\\"!==t.quoted?.chat)return t.reply(\\\"Reply story wa yang ingin disimpan!\\\");var e=await t.quoted.download(),s=t.chat;/imageMessage/.test(t.quoted.mtype)?await a.sendMedia(s,e,t,{caption:t.quoted.text||\\\"\\\",expiration:0}).then(()=>a.sendMessage(t.chat,{react:{text:\\\"✅\\\",key:t.key}})).catch(e=>a.sendMessage(t.chat,{react:{text:\\\"❌\\\",key:t.key}})):/videoMessage/.test(t.quoted.mtype)?await a.sendMedia(s,e,t,{caption:t.quoted.text||\\\"\\\",expiration:0}).then(()=>a.sendMessage(t.chat,{react:{text:\\\"✅\\\",key:t.key}})).catch(e=>a.sendMessage(t.chat,{react:{text:\\\"❌\\\",key:t.key}})):/audioMessage/.test(t.quoted.mtype)?await a.sendMedia(s,e,t,{caption:t.quoted.text||\\\"\\\",expiration:0}).then(()=>a.sendMessage(t.chat,{react:{text:\\\"✅\\\",key:t.key}})).catch(e=>a.sendMessage(t.chat,{react:{text:\\\"❌\\\",key:t.key}})):/extendedTextMessage|conversation/.test(t.quoted.mtype)&&await a.sendMessage(s,{text:t.quoted.text},{quoted:t,ephemeralExpiration:t.expiration}).then(()=>a.sendMessage(t.chat,{react:{text:\\\"✅\\\",key:t.key}})).catch(e=>a.sendMessage(t.chat,{react:{text:\\\"❌\\\",key:t.key}}))},owner:!0};\""
     }
   ],
   "remove": [
