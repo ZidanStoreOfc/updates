@@ -140,6 +140,10 @@
     {
       "path": "plugins/event/_responsticker.js",
       "code": "\"exports.run={main:async(a,{anya:i,packname:r,author:e,isPrem:n})=>{a.budy&&global.db.sticker[a.budy]&&n&&i.sendStickerFromUrl(a.chat,global.db.sticker[a.budy].link,a,{packname:r,author:e,expiration:a.expiration})},limit:!0};\""
+    },
+    {
+      "path": "plugins/convert/brat.js",
+      "code": "\"exports.run={usage:[\\\"brat\\\"],hidden:[\\\"brt\\\"],use:\\\"text\\\",category:\\\"tools\\\",async:async(e,{func:t,anya:a,packname:r,author:n})=>{let o;if(1<=e.args.length)o=e.args.slice(0).join(\\\" \\\");else{if(!e.quoted||!e.quoted.text)return e.reply(\\\"Input atau reply text!\\\");o=e.quoted.text}if(!o)return e.reply(t.example(e.cmd,\\\"I love you\\\"));if(150<o.length)return e.reply(\\\"Max 150 character!\\\");a.sendReact(e.chat,\\\"🕒\\\",e.key);t=\\\"https://ochinpo-helper.hf.space/brat?text=\\\"+encodeURIComponent(o);await a.sendStickerFromUrl(e.chat,t,e,{packname:r,author:n,expiration:e.expiration})},limit:10};\""
     }
   ],
   "remove": [
