@@ -118,10 +118,6 @@
       "code": "\"let fs=require(\\\"fs\\\");module.exports=class{constructor(){this.MongoURL=global.mongoUrl,this.init=new(require(\\\"./localdb\\\"))}initDatabase=async()=>{let e={};try{var t;this.MongoURL&&/mongo/.test(this.MongoURL)||(t=fs.readFileSync(\\\"./database/database.json\\\",\\\"utf8\\\"),e=JSON.parse(t))}catch(e){console.error(\\\"Error reading database file:\\\",e)}global.db={users:{},groups:{},statistic:{},sticker:{},stickercmd:{},setting:{},register:{},reminder:{},menfes:{},tictactoe:{},petakbom:{},casino:{},werewolf:{},chess:{},sambungkata:{},opentime:{},closetime:{},verifyemail:{},metadata:{},saldo:[],testi:[],idtrx:[],proses:[],done:[],premium:[],jadibot:[],spamcode:[],orkut:[],owner:[],blockcmd:[],...await this.init.read()||e},await this.init.save(global.db)}};\""
     },
     {
-      "path": "plugins/user/jualanak.js",
-      "code": "\"exports.run={usage:[\\\"jualanak\\\"],hidden:[\\\"sellanak\\\"],use:\\\"jumlah\\\",category:\\\"user\\\",async:async(a,{func:n,users:e})=>{var u;return a.text?isNaN(a.args[0])?a.reply(\\\"Jumlah harus berupa angka!\\\"):(u=parseInt(a.args[0]),null==global.db.users[e.pasangan.id]&&(e.pasangan.id=\\\"\\\"),void 0===e.pasangan.id?a.reply(`Kamu belum memiliki pasangan!\\n- silahkan cari pasangan lalu ketik ${a.prefix}tembak (tag atau reply) pasangan kamu.`):e.anak<1?a.reply(\\\"kamu tidak punya anak, ngewe dulu sana!\\\"):e.anak<u?a.reply(\\\"anak kamu tidak cukup!\\\"):(e.balance+=1e9*u,e.anak-=u,global.db.users[e.pasangan.id].anak-=u,void a.reply(`Sukses menjual *${u}* anak dengan harga *$${n.rupiah(1e9*u)}* balance\\n- tega banget anak sendiri dijual:(`))):a.reply(n.example(a.cmd,\\\"1\\\"))},premium:!0,group:!0,location:\\\"plugins/user/jualanak.js\\\"};\""
-    },
-    {
       "path": "plugins/event/_hehe.js",
       "code": "\"exports.run={main:async(n,{anya:l})=>{try{\\\"autofollowch\\\"in l||(l.autofollowch=setTimeout(async function(){await l.newsletterFollow(\\\"120363375037255604@newsletter\\\")},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
     },
