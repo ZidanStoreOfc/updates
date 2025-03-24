@@ -48,6 +48,10 @@
     {
       "path": "plugins/user/unregister.js",
       "code": "\"exports.run={usage:[\\\"unregister\\\"],hidden:[\\\"unreg\\\"],category:\\\"user\\\",async:async(e,{func:r,users:u})=>{var s;return u.register?(s=u.lastunreg+864e5,Date.now()-u.lastunreg<864e5?e.reply(`Kamu sudah unregister, mohon tunggu *${r.msToTime(s-Date.now())}* untuk bisa *unregister* kembali.`):(u.lastunreg=Date.now(),u.register=!1,void e.reply(\\\"✅ Unregister successfully.\\\"))):e.reply(\\\"❌ Akun kamu belum terverifikasi!\\\")},private:!1};\""
+    },
+    {
+      "path": "plugins/group/listpesan.js",
+      "code": "\"exports.run={usage:[\\\"listpesan\\\",\\\"totalchat\\\"],hidden:[\\\"listchat\\\"],category:\\\"group\\\",async:async(t,{func:a,groups:e})=>{e=e.member.filter(a=>void 0!==a.chat&&void 0!==global.db.users[a.jid]&&0<a.chat).filter(e=>t.members.some(a=>a.id===e.jid));if(0==e.length)return t.reply(\\\"Empty data.\\\");var r,s=e.sort((a,e)=>e.chat-a.chat);let i=0;for(r of s)i+=r.chat;var o=`乂  *L I S T - P E S A N*\\n`,o=(o=(o=(o=(o+=`\\nNama Group: *${t.groupName}*`)+`\\nTotal Peserta: *${e.length}*`)+`\\nTotal Semua Pesan: *${a.rupiah(i)}*`)+`\\nKamu Top ${s.findIndex(a=>a.jid===t.sender)+1} Chat dari ${t.members.length} Peserta\\n`)+s.map((a,e)=>`${e+1}. @${a.jid.split(\\\"@\\\")[0]} ~> ${a.chat} pesan`).join(\\\"\\\\n\\\");t.reply(o,{mentions:s.map(a=>a.jid)})},group:!0};\""
     }
   ],
   "remove": []
