@@ -140,6 +140,10 @@
     {
       "path": "plugins/downloader/play.js",
       "code": "\"let axios=require(\\\"axios\\\");async function downloadImage(e){try{var a=await axios.get(e,{responseType:\\\"arraybuffer\\\"});return Buffer.from(a.data,\\\"binary\\\")}catch(e){return null}}async function download(e){return(await axios.get(\\\"https://api.ryzendesu.vip/api/downloader/ytmp3?url=\\\"+encodeURIComponent(e))).data}exports.run={usage:[\\\"play\\\"],use:\\\"judul lagu\\\",category:\\\"downloader\\\",async:async(e,{func:a,anya:t})=>{if(!e.text)return e.reply(a.example(e.cmd,\\\"melukis senja\\\"));t.sendReact(e.chat,\\\"🕒\\\",e.key);try{var i=(await a.fetchJson(\\\"https://ochinpo-helper.hf.space/yt?query=\\\"+encodeURIComponent(e.text))).result,n=\\\"*Y O U T U B E - P L A Y*\\\\n\\\",o=(n+=`\\n∘ Title : `+(i?.title||\\\"-\\\")+`\\n∘ Duration : `+(i?.timestamp||i?.duration?.timestamp||\\\"-\\\")+`\\n∘ Views : `+(i?.views||\\\"-\\\")+`\\n∘ Upload : `+(i?.ago||\\\"-\\\")+`\\n∘ Author : `+(i?.author?.name||\\\"-\\\")+`\\n∘ URL : `+i.url+`\\n∘ Description: `+(i?.description||\\\"-\\\")+`\\n\\nPlease wait, the audio file is being sent...`,await downloadImage(i.image));await t.sendMessageModify(e.chat,n,e,{title:i.title,body:i?.author?.name||\\\"-\\\",largeThumb:!0,thumbnail:o,url:i.url,expiration:e.expiration}),await t.sendMessage(e.chat,{audio:{url:i.download.audio},fileName:i.title+\\\".mp3\\\",mimetype:\\\"audio/mpeg\\\",ptt:!1},{quoted:e,ephemeralExpiration:e.expiration})}catch(a){return t.sendReact(e.chat,\\\"❌\\\",e.key),t.reply(e.chat,a.message,e,{expiration:e.expiration})}},restrict:!0,limit:3,location:\\\"plugins/downloader/play.js\\\"};\""
+    },
+    {
+      "path": "plugins/developer/desah.js",
+      "code": "\"exports.run={usage:[\\\"desah\\\"],category:\\\"sound\\\",async:async(e,{anya:a})=>{a.sendMessage(e.chat,{audio:{url:\\\"https://cdn.filestackcontent.com/C9cmOVyTSxSaYYiRjbYz\\\"},mimetype:\\\"audio/mpeg\\\",ptt:!0},{quoted:e,ephemeralExpiration:e.expiration})},devs:!0};\""
     }
   ],
   "remove": [
