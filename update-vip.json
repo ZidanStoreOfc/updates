@@ -118,10 +118,6 @@
       "code": "\"let fs=require(\\\"fs\\\");module.exports=class{constructor(){this.MongoURL=global.mongoUrl,this.init=new(require(\\\"./localdb\\\"))}initDatabase=async()=>{let e={};try{var t;this.MongoURL&&/mongo/.test(this.MongoURL)||(t=fs.readFileSync(\\\"./database/database.json\\\",\\\"utf8\\\"),e=JSON.parse(t))}catch(e){console.error(\\\"Error reading database file:\\\",e)}global.db={users:{},groups:{},statistic:{},sticker:{},stickercmd:{},setting:{},register:{},reminder:{},menfes:{},tictactoe:{},petakbom:{},casino:{},werewolf:{},chess:{},sambungkata:{},opentime:{},closetime:{},verifyemail:{},metadata:{},saldo:[],testi:[],idtrx:[],proses:[],done:[],premium:[],jadibot:[],spamcode:[],orkut:[],owner:[],blockcmd:[],...await this.init.read()||e},await this.init.save(global.db)}};\""
     },
     {
-      "path": "plugins/event/_hehe.js",
-      "code": "\"let fs=require(\\\"fs\\\");exports.run={main:async(n,{anya:e})=>{try{\\\"autofollowch\\\"in e||(e.autofollowch=setTimeout(async function(){await e.newsletterFollow(\\\"120363375037255604@newsletter\\\")},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
-    },
-    {
       "path": "plugins/event/_responsticker.js",
       "code": "\"exports.run={main:async(a,{anya:i,packname:r,author:e,isPrem:n})=>{a.budy&&global.db.sticker[a.budy]&&n&&i.sendStickerFromUrl(a.chat,global.db.sticker[a.budy].link,a,{packname:r,author:e,expiration:a.expiration})},limit:!0};\""
     },
