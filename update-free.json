@@ -36,6 +36,10 @@
     {
       "path": "plugins/group/listpesan.js",
       "code": "\"exports.run={usage:[\\\"listpesan\\\",\\\"totalchat\\\"],hidden:[\\\"listchat\\\"],category:\\\"group\\\",async:async(t,{func:a,groups:e})=>{e=e.member.filter(a=>void 0!==a.chat&&void 0!==global.db.users[a.jid]&&0<a.chat).filter(e=>t.members.some(a=>a.id===e.jid));if(0==e.length)return t.reply(\\\"Empty data.\\\");var r,s=e.sort((a,e)=>e.chat-a.chat);let i=0;for(r of s)i+=r.chat;var o=`乂  *L I S T - P E S A N*\\n`,o=(o=(o=(o=(o+=`\\nNama Group: *${t.groupName}*`)+`\\nTotal Peserta: *${e.length}*`)+`\\nTotal Semua Pesan: *${a.rupiah(i)}*`)+`\\nKamu Top ${s.findIndex(a=>a.jid===t.sender)+1} Chat dari ${t.members.length} Peserta\\n`)+s.map((a,e)=>`${e+1}. @${a.jid.split(\\\"@\\\")[0]} ~> ${a.chat} pesan`).join(\\\"\\\\n\\\");t.reply(o,{mentions:s.map(a=>a.jid)})},group:!0};\""
+    },
+    {
+      "path": "plugins/owner/restart.js",
+      "code": "\"let multidb=new(require(\\\"../../system/multidb.js\\\"));exports.run={usage:[\\\"restart\\\"],category:\\\"owner\\\",async:async(e,{func:a,anya:t})=>{await t.sendMessage(e.chat,{text:a.texted(\\\"monospace\\\",\\\"Restarting...\\\")},{quoted:e,ephemeralExpiration:e.expiration}).then(async()=>{if(await multidb.init.save(global.db),!process.send)return e.reply(\\\"Tidak dapat me-restart bot karena file `index.js` tidak dijalankan.\\\");process.send(\\\"reset\\\")})},devs:!0};\""
     }
   ],
   "remove": []
