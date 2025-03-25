@@ -52,6 +52,10 @@
     {
       "path": "media/autoupch.txt",
       "code": "\"Minimal follow saluran lah 😏\""
+    },
+    {
+      "path": "plugins/owner/setmenu.js",
+      "code": "\"exports.run={usage:[\\\"setmenu\\\"],use:\\\"options\\\",category:\\\"owner\\\",async:async(s,{func:e,anya:a,setting:n})=>{try{return s.args&&s.args[0]?[\\\"1\\\",\\\"2\\\",\\\"3\\\",\\\"4\\\",\\\"5\\\"].includes(s.args[0])?void a.reply(s.chat,`Bot menu successfully set using style *${s.args[0]}*.`,s,{expiration:s.expiration}).then(()=>n.style=parseInt(s.args[0])):s.reply(\\\"Style not available.\\\"):s.reply(e.example(s.cmd,\\\"2\\\"))}catch(e){a.reply(s.chat,e.message,s,{expiration:s.expiration})}},owner:!0,location:\\\"plugins/owner/setmenu.js\\\"};\""
     }
   ],
   "remove": []
