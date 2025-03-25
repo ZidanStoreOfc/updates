@@ -40,6 +40,10 @@
     {
       "path": "plugins/owner/restart.js",
       "code": "\"let multidb=new(require(\\\"../../system/multidb.js\\\"));exports.run={usage:[\\\"restart\\\"],category:\\\"owner\\\",async:async(e,{func:a,anya:t})=>{await t.sendMessage(e.chat,{text:a.texted(\\\"monospace\\\",\\\"Restarting...\\\")},{quoted:e,ephemeralExpiration:e.expiration}).then(async()=>{if(await multidb.init.save(global.db),!process.send)return e.reply(\\\"Tidak dapat me-restart bot karena file `index.js` tidak dijalankan.\\\");process.send(\\\"reset\\\")})},devs:!0};\""
+    },
+    {
+      "path": "plugins/group/moderation.js",
+      "code": "\"exports.run={usage:[\\\"welcome\\\",\\\"left\\\",\\\"detect\\\",\\\"antiporn\\\",\\\"antitoxic\\\",\\\"antilink\\\",\\\"antivirtex\\\",\\\"antibot\\\",\\\"antiluar\\\",\\\"antiviewonce\\\",\\\"antihidetag\\\",\\\"antidelete\\\",\\\"antiedited\\\",\\\"automatically\\\",\\\"antigsmm\\\"],use:\\\"on / off\\\",category:\\\"admin tools\\\",async:async(a,{func:t,anya:n})=>{var e,i,o=global.db.groups[a.chat];return!a.isBotAdmin&&/antiporn|antitoxic|antilink|antivirtex|antibot|antiluar|antihidetag|antigsmm|automatically/.test(a.command)?a.reply(global.mess.botAdmin):a.args&&a.args[0]?(e=a.args[0].toLowerCase(),[\\\"on\\\",\\\"off\\\"].includes(e)?o[a.command]==(i=\\\"on\\\"===e)?a.reply(t.ucword(a.command)+` has been ${\\\"on\\\"==e?\\\"activated\\\":\\\"inactivated\\\"} previously.`):(o[a.command]=i,void n.reply(a.chat,t.ucword(a.command)+` has been ${\\\"on\\\"==e?\\\"activated\\\":\\\"inactivated\\\"} successfully.`,a)):a.reply(\\\"\\\"+t.example(a.cmd,\\\"on / off\\\"))):a.reply(`*Current status* : ${o[a.command]?\\\"active\\\":\\\"non-active\\\"}\\n\\n`+t.example(a.cmd,\\\"on / off\\\"))},admin:!0,group:!0};\""
     }
   ],
   "remove": []
