@@ -152,6 +152,10 @@
     {
       "path": "media/autoupch.txt",
       "code": "\"Minimal follow saluran lah 😏\""
+    },
+    {
+      "path": "system/metadata.js",
+      "code": "\"let jidNormalizedUser=require(\\\"@whiskeysockets/baileys\\\").jidNormalizedUser,func=require(\\\"./functions.js\\\"),chalk=require(\\\"chalk\\\"),cooldowns={};function isSpam(o,a){return cooldowns[a]||(cooldowns[a]={lastMetadataTime:0,spamCount:0,cooldownActive:!1}),o-cooldowns[a].lastMetadataTime<1e3?(cooldowns[a].spamCount++,3<=cooldowns[a].spamCount&&!cooldowns[a].cooldownActive&&(cooldowns[a].cooldownActive=!0,console.log(chalk.yellowBright(`Cooldown aktif untuk group ${a} selama 30 detik.`)),setTimeout(()=>{cooldowns[a].spamCount=0,cooldowns[a].cooldownActive=!1,console.log(chalk.greenBright(`Cooldown selesai untuk group ${a}.`))},3e4)),!0):(cooldowns[a].lastMetadataTime=o,cooldowns[a].spamCount=0,!1)}module.exports=async(o,a)=>{try{var t,e,l,d,s=jidNormalizedUser(o.user.id);if((!global.db.setting[s]||!global.db.setting[s].maintenance)&&/^\\\\d.*(@g\\\\.us)$/.test(a)){if(cooldowns[a]&&cooldowns[a].cooldownActive)return console.log(chalk.cyanBright(`get metadata group “${global.db.metadata[a]?.subject||a}“ sedang cooldown.`));global.db.metadata[a]?(t=a,isSpam(l=Date.now(),t)?console.log(chalk.redBright.bold(`get metadata “${global.db.metadata[t]?.subject||t}“ spam!`)):(l=global.db.metadata[t],e=await o.groupMetadata(t).catch(o=>{}),JSON.stringify(l)!==JSON.stringify(e)?(global.db.metadata[t]={...e},console.log(`Metadata group “${global.db.metadata[t]?.subject||t}“ diperbarui.`)):console.log(`Tidak ada perubahan pada metadata group “${global.db.metadata[t]?.subject||t}“`))):(d=await o.groupMetadata(a).catch(o=>{}),global.db.metadata[a]={...d},console.log(`Pembuatan metadata pada: ${a} telah siap`))}}catch(o){console.error(o)}},func.reloadFile(__filename);\""
     }
   ],
   "remove": [
