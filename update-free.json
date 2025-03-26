@@ -76,6 +76,10 @@
     {
       "path": "system/multidb.js",
       "code": "\"let fs=require(\\\"fs\\\");module.exports=class{constructor(){this.MongoURL=global.mongoUrl,this.init=this.MongoURL&&/mongo/.test(this.MongoURL)?new(require(\\\"./mongodb\\\"))(this.MongoURL):new(require(\\\"./localdb\\\"))}initDatabase=async()=>{let t={};try{var e;this.MongoURL&&/mongo/.test(this.MongoURL)||(e=fs.readFileSync(\\\"./database/database.json\\\",\\\"utf8\\\"),t=JSON.parse(e))}catch(t){console.error(\\\"Error reading database file:\\\",t)}global.db={users:{},groups:{},statistic:{},sticker:{},stickercmd:{},setting:{},register:{},menfes:{},tictactoe:{},petakbom:{},casino:{},werewolf:{},chess:{},sambungkata:{},opentime:{},closetime:{},metadata:{},jadibot:[],premium:[],sewabot:[],...await this.init.read()||t},await this.init.save(global.db)}};\""
+    },
+    {
+      "path": "plugins/user/cekbool.js",
+      "code": "\"exports.run={usage:[\\\"cekbool\\\"],hidden:[\\\"cekbol\\\"],category:\\\"user\\\",async:async(a,{froms:c})=>{var e;return c?(e=(e=[\\\"10cm\\\",\\\"12cm\\\",\\\"13cm\\\",\\\"11cm\\\",\\\"14cm\\\",\\\"15cm\\\",\\\"5cm\\\",\\\"6cm\\\",\\\"7cm\\\",\\\"9cm\\\",\\\"20cm\\\",\\\"17cm\\\",\\\"16cm\\\",\\\"1cm\\\",\\\"ga punya Lobang Pantat\\\"])[Math.floor(Math.random()*e.length)],a.reply(`Kelonggaran Lobang Pantat @${c.replace(/[^0-9]/g,\\\"\\\")} adalah *${e}*`)):a.reply(\\\"Mention or Reply chat target.\\\")},limit:!0};\""
     }
   ],
   "remove": []
