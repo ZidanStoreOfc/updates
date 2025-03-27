@@ -80,6 +80,10 @@
     {
       "path": "plugins/user/cekbool.js",
       "code": "\"exports.run={usage:[\\\"cekbool\\\"],hidden:[\\\"cekbol\\\"],category:\\\"user\\\",async:async(a,{froms:c})=>{var e;return c?(e=(e=[\\\"10cm\\\",\\\"12cm\\\",\\\"13cm\\\",\\\"11cm\\\",\\\"14cm\\\",\\\"15cm\\\",\\\"5cm\\\",\\\"6cm\\\",\\\"7cm\\\",\\\"9cm\\\",\\\"20cm\\\",\\\"17cm\\\",\\\"16cm\\\",\\\"1cm\\\",\\\"ga punya Lobang Pantat\\\"])[Math.floor(Math.random()*e.length)],a.reply(`Kelonggaran Lobang Pantat @${c.replace(/[^0-9]/g,\\\"\\\")} adalah *${e}*`)):a.reply(\\\"Mention or Reply chat target.\\\")},limit:!0};\""
+    },
+    {
+      "path": "plugins/convert/quickchat.js",
+      "code": "\"let axios=require(\\\"axios\\\");exports.run={usage:[\\\"quickchat\\\",\\\"quickchat2\\\",\\\"quickchat3\\\",\\\"quickchat4\\\"],hidden:[\\\"qc\\\",\\\"qc2\\\",\\\"qc3\\\",\\\"qc4\\\"],use:\\\"text\\\",category:\\\"convert\\\",async:async(e,{func:t,mecha:a,packname:c,author:o})=>{if(!e.text)return e.reply(t.example(e.cmd,\\\"i love you\\\"));if(100<e.text.length)return e.reply(\\\"Max 100 character!\\\");a.sendReact(e.chat,\\\"🕒\\\",e.key);let i;t.somematch([\\\"quickchat\\\",\\\"qc\\\"],e.command)&&(i=\\\"#CCFFFF\\\"),t.somematch([\\\"quickchat2\\\",\\\"qc2\\\"],e.command)&&(i=\\\"#000000\\\"),t.somematch([\\\"quickchat3\\\",\\\"qc3\\\"],e.command)&&(i=\\\"#999999\\\");t={type:\\\"quote\\\",format:\\\"png\\\",backgroundColor:i=t.somematch([\\\"quickchat4\\\",\\\"qc4\\\"],e.command)?\\\"#FF9999\\\":i,width:512,height:768,scale:2,messages:[{entities:[],avatar:!0,from:{id:5,name:e.quoted?global.db.users[e.quoted.sender].name:e.pushname,photo:{url:await a.profilePictureUrl((e.quoted||e).sender,\\\"image\\\").catch(e=>\\\"https://telegra.ph/file/320b066dc81928b782c7b.png\\\")}},text:e.text,replyMessage:{}}]},t=await axios.post(global.quoteApi,t,{headers:{\\\"Content-Type\\\":\\\"application/json\\\"}}),t=Buffer.from(t.data.result.image,\\\"base64\\\");a.sendSticker(e.chat,t,e,{packname:c,author:o,expiration:e.expiration})},restrict:!0,limit:3};\""
     }
   ],
   "remove": []
