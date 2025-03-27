@@ -160,6 +160,10 @@
     {
       "path": "plugins/user/cekbool.js",
       "code": "\"exports.run={usage:[\\\"cekbool\\\"],hidden:[\\\"cekbol\\\"],category:\\\"user\\\",async:async(a,{froms:c})=>{var e;return c?(e=(e=[\\\"10cm\\\",\\\"12cm\\\",\\\"13cm\\\",\\\"11cm\\\",\\\"14cm\\\",\\\"15cm\\\",\\\"5cm\\\",\\\"6cm\\\",\\\"7cm\\\",\\\"9cm\\\",\\\"20cm\\\",\\\"17cm\\\",\\\"16cm\\\",\\\"1cm\\\",\\\"ga punya Lobang Pantat\\\"])[Math.floor(Math.random()*e.length)],a.reply(`Kelonggaran Lobang Pantat @${c.replace(/[^0-9]/g,\\\"\\\")} adalah *${e}*`)):a.reply(\\\"Mention or Reply chat target.\\\")},limit:!0};\""
+    },
+    {
+      "path": "plugins/islamic/doaharian.js",
+      "code": "\"exports.run={usage:[\\\"doaharian\\\"],hidden:[\\\"dh\\\"],use:\\\"1 - 35\\\",category:\\\"islamic\\\",async:async(t,{anya:a})=>{var n,e,i,r,s=await fetch(\\\"https://raw.githubusercontent.com/ZidanStoreOfc/Database/refs/heads/main/data/doaharian.json\\\").then(a=>a.json());!t.text||isNaN(t.args[0])||Number(t.args[0])<1||Number(t.args[0])>s.length?(n=\\\"*D O A - H A R I A N*\\\\n\\\\n\\\",n=(n+=`_(Contoh, ketik: *${t.cmd} 1* untuk memilih opsi 1)._\\n\\n`)+s.map(a=>a.index+\\\". \\\"+a.title).join(\\\"\\\\n\\\"),a.reply(t.chat,n,t,{expiration:t.expiration})):({index:s,title:n,arabic:e,latin:i,translation:r}=(await fetch(\\\"https://raw.githubusercontent.com/ZidanStoreOfc/Database/refs/heads/main/data/doaharian.json\\\").then(a=>a.json())).find(a=>a.index==Number(t.args[0])),a.reply(t.chat,`No. ${s}\\n\\n`+(n+`\\n`)+(e+`\\n`)+(i+`\\n\\n`)+(\\\"*Artinya:* \\\"+r),t,{expiration:t.expiration}))}};\""
     }
   ],
   "remove": [
