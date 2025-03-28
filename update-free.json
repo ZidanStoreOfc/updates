@@ -90,5 +90,7 @@
       "code": "\"let{proto,generateWAMessageFromContent,generateWAMessageContent,prepareWAMessageMedia}=require(\\\"@whiskeysockets/baileys\\\"),fetch=require(\\\"node-fetch\\\");exports.run={usage:[\\\"ppcouple\\\"],hidden:[\\\"ppcp\\\"],category:\\\"tools\\\",async:async(e,{anya:a})=>{a.sendReact(e.chat,\\\"🕒\\\",e.key);var t=(await fetch(\\\"https://raw.githubusercontent.com/ZidanStoreOfc/Database/refs/heads/main/data/ppcouple.json\\\").then(e=>e.json())).result.random(),t=[{header:{hasMediaAttachment:!0,...await prepareWAMessageMedia({image:{url:t.male}},{upload:a.waUploadToServer})},body:{text:\\\"Cowo\\\"},nativeFlowMessage:{buttons:[{name:\\\"cta_url\\\",buttonParamsJson:JSON.stringify({display_text:\\\"Source Url\\\",url:t.male})}]}},{header:{hasMediaAttachment:!0,...await prepareWAMessageMedia({image:{url:t.female}},{upload:a.waUploadToServer})},body:{text:\\\"Cewe\\\"},nativeFlowMessage:{buttons:[{name:\\\"cta_url\\\",buttonParamsJson:JSON.stringify({display_text:\\\"Source Url\\\",url:t.female})}]}}],e=generateWAMessageFromContent(e.chat,{viewOnceMessage:{message:{interactiveMessage:{footer:{text:\\\"Powered by ZidanDev.\\\"},carouselMessage:{cards:t,messageVersion:1}}}}},{});await a.relayMessage(e.key.remoteJid,e.message,{messageId:e.key.id})},limit:!0};\""
     }
   ],
-  "remove": []
+  "remove": [
+    "media/autoupch.txt"
+  ]
 }
