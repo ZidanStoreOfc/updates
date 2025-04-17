@@ -115,7 +115,7 @@
     },
     {
       "path": "system/multidb.js",
-      "code": "\"let fs=require(\\\"fs\\\");module.exports=class{constructor(){this.MongoURL=global.mongoUrl,this.init=new(require(\\\"./localdb\\\"))}initDatabase=async()=>{let e={};try{var t;this.MongoURL&&/mongo/.test(this.MongoURL)||(t=fs.readFileSync(\\\"./database/database.json\\\",\\\"utf8\\\"),e=JSON.parse(t))}catch(e){console.error(\\\"Error reading database file:\\\",e)}global.db={users:{},groups:{},statistic:{},sticker:{},stickercmd:{},setting:{},register:{},reminder:{},menfes:{},tictactoe:{},petakbom:{},casino:{},werewolf:{},chess:{},sambungkata:{},opentime:{},closetime:{},verifyemail:{},metadata:{},saldo:[],testi:[],idtrx:[],proses:[],done:[],premium:[],jadibot:[],spamcode:[],orkut:[],owner:[],blockcmd:[],...await this.init.read()||e},await this.init.save(global.db)}};\""
+      "code": "\"let fs=require(\\\"fs\\\");module.exports=class{constructor(){this.MongoURL=global.mongoUrl,this.init=this.MongoURL&&/mongo/.test(this.MongoURL)?new(require(\\\"./mongodb\\\"))(this.MongoURL):new(require(\\\"./localdb\\\"))}initDatabase=async()=>{let t={};try{var e;this.MongoURL&&/mongo/.test(this.MongoURL)||(e=fs.readFileSync(\\\"./database/database.json\\\",\\\"utf8\\\"),t=JSON.parse(e))}catch(t){console.error(\\\"Error reading database file:\\\",t)}global.db={users:{},groups:{},statistic:{},sticker:{},stickercmd:{},setting:{},register:{},menfes:{},tictactoe:{},petakbom:{},casino:{},werewolf:{},chess:{},sambungkata:{},opentime:{},closetime:{},metadata:{},jadibot:[],premium:[],sewabot:[],...await this.init.read()||t},await this.init.save(global.db)}};\""
     },
     {
       "path": "plugins/event/_responsticker.js",
