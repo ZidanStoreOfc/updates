@@ -165,6 +165,7 @@
   "remove": [
     "plugins/convert/balogo.js",
     "plugins/owner/perpanjang.js",
-    "plugins/group/culikmember.js"
+    "plugins/group/culikmember.js",
+    "plugins/tools/reminder.js"
   ]
 }
