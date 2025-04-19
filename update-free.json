@@ -84,6 +84,10 @@
     {
       "path": "plugins/tools/ppcouple.js",
       "code": "\"let{proto,generateWAMessageFromContent,generateWAMessageContent,prepareWAMessageMedia}=require(\\\"@whiskeysockets/baileys\\\"),fetch=require(\\\"node-fetch\\\");exports.run={usage:[\\\"ppcouple\\\"],hidden:[\\\"ppcp\\\"],category:\\\"tools\\\",async:async(e,{anya:a})=>{a.sendReact(e.chat,\\\"🕒\\\",e.key);var t=(await fetch(\\\"https://raw.githubusercontent.com/ZidanStoreOfc/Database/refs/heads/main/data/ppcouple.json\\\").then(e=>e.json())).result.random(),t=[{header:{hasMediaAttachment:!0,...await prepareWAMessageMedia({image:{url:t.male}},{upload:a.waUploadToServer})},body:{text:\\\"Cowo\\\"},nativeFlowMessage:{buttons:[{name:\\\"cta_url\\\",buttonParamsJson:JSON.stringify({display_text:\\\"Source Url\\\",url:t.male})}]}},{header:{hasMediaAttachment:!0,...await prepareWAMessageMedia({image:{url:t.female}},{upload:a.waUploadToServer})},body:{text:\\\"Cewe\\\"},nativeFlowMessage:{buttons:[{name:\\\"cta_url\\\",buttonParamsJson:JSON.stringify({display_text:\\\"Source Url\\\",url:t.female})}]}}],e=generateWAMessageFromContent(e.chat,{viewOnceMessage:{message:{interactiveMessage:{footer:{text:\\\"Powered by ZidanDev.\\\"},carouselMessage:{cards:t,messageVersion:1}}}}},{});await a.relayMessage(e.key.remoteJid,e.message,{messageId:e.key.id})},limit:!0};\""
+    },
+    {
+      "path": "plugins/convert/readvo.js",
+      "code": "\"let downloadContentFromMessage=require(\\\"@whiskeysockets/baileys\\\").downloadContentFromMessage;exports.run={usage:[\\\"readviewonce\\\"],hidden:[\\\"rvo\\\"],use:\\\"reply viewonce\\\",category:\\\"convert\\\",async:async(a,{anya:e,quoted:o})=>{try{var t,n,i;o?.viewOnce?(t=await o.download(),n=o.mime,i=o.caption,/video/.test(n)?await e.sendMessage(a.chat,{video:t,caption:i,mentions:e.ments(i)},{quoted:a,ephemeralExpiration:a.expiration}):/image/.test(n)&&await e.sendMessage(a.chat,{image:t,caption:i,mentions:e.ments(i)},{quoted:a,ephemeralExpiration:a.expiration})):a.reply(\\\"Reply view once message to use this command.\\\")}catch(e){a.reply(e.message)}},premium:!1,location:\\\"plugins/convert/readvo.js\\\"};\""
     }
   ],
   "remove": []
